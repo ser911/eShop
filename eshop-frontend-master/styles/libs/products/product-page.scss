@@ -1,0 +1,77 @@
+.product{
+
+ 
+    &-name{
+        font-size: 2em;
+    }
+    &-desc{
+        font-size: 1.4em;
+    }
+    &-rating{
+        margin: 15px 0;
+    }
+
+    &-price{
+        font-size: 1.2em;
+        font-weight: 800;
+        border-bottom: 1px solid var(--surface-300);
+        padding: 25px 0;
+    }
+
+    &-quantity{
+        margin: 25px 0;
+    }
+
+    .p-button{
+        background-color: #682e42;
+        border-color: #682e42;
+        border: none;
+
+        &:hover{
+            background-color: goldenrod;
+        }
+
+      }
+
+      .sizes{
+          .size{            
+          }
+
+          .gold{
+            background-color: goldenrod;
+          }
+          button{
+              margin-right: 15px;
+              height: 38px;
+              width: 38px;
+              outline: none;
+              border: none;
+              background-color: #682e42;
+              color: white;
+              cursor: pointer;
+          }
+         button:disabled{
+            cursor: default;
+            background-color: #000;
+            opacity: 0.3;
+          }
+
+          
+      }
+
+      
+    }
+    .colors{
+        display: flex;
+        justify-content: center;
+        .circle{
+            height: 30px;
+            width: 30px;
+            border-radius: 50%;
+            border: 1px solid black;
+            margin-right: 15px;
+            cursor: pointer;
+            
+            
+        }
+    }

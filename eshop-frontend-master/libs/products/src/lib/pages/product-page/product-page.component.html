@@ -1,0 +1,59 @@
+<div class="product-page" *ngIf="product">
+    <div class="grid">
+        <div class="col-6">
+            <ui-gallery [images]="product.images" [image]="product.image" [product]="product" ></ui-gallery>
+        </div>
+        <div class="col-6 product">
+            <h2>{{product.name}}</h2>
+            <div class="rating">
+                <p-rating [(ngModel)]="product.rating" [disabled]="true" [cancel]="false"></p-rating>
+            </div>
+            <div class="product-price">
+                {{product.price | currency}}
+            </div>
+
+            <div class="sizes">
+                <h2>Sizes</h2>
+                <button [ngClass]="{gold: clickedIndex === i}" class="size" [disabled]="f.available? false : true" *ngFor="let f of filteredVariants, let i = index" (click)="selectSize($event)" (click)="clickedIndex = i">{{f.size}}</button>
+            </div>
+            <div class="product-quantity">
+                <div class="field col-12 md:col-3">
+                    <label for="quantity">Quantity</label>
+                    <p-inputNumber  
+                    [(ngModel)]="quantity"
+                     inputId="quantity"
+                     mode="decimal"
+                     [showButtons]="true"
+                     [min]="minInv"
+                     [max]="maxInv">
+                    </p-inputNumber>
+                </div>
+            </div>
+        <div class="product-action">
+            <button
+            pButton
+            pRipple
+            type="button"
+            label="Add to cart"
+            class="p-button-rounded"
+            (click)="addProductToCart()">
+            </button>
+        </div>
+
+        <div class="col-6">
+            <div [innerHTML]="product.description"></div>
+        </div>
+
+        </div>
+    </div>
+    <div class="grid">
+        <div class="col-6 pt-5">
+            <div class="colors" *ngIf="multipleColors">
+                <div [style.background-color]="product.color" class="circle" *ngFor="let product of products, let i = index" (click)="selectColor(product.id)"></div>
+
+        </div>
+    
+</div>
+
+    </div>
+</div>

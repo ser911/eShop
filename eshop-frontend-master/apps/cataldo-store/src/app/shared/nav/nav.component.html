@@ -1,0 +1,41 @@
+
+<div class="dropdown">
+  <button class="dropbtn">UOMO</button>
+    <div class="dropdown-content">
+      <div class="brands">
+        <h4>Brands</h4>
+        <a *ngFor="let brand of brands" (click)="navigateToBrand(brand.id)">{{brand.name}}</a>
+
+      </div>
+      <div class="categories">
+        <h4>Categorie</h4>
+        <a *ngFor="let category of categories" (click)="navigateToCat(category.id)">{{category.name}}</a>
+      </div>
+    </div> 
+</div>
+
+ <div class="dropdown-2">
+  <button class="dropbtn">DONNA</button>
+    <div class="dropdown-content-2">
+      <div class="brands">
+        <h4>Brands</h4>
+        <a *ngFor="let w of womenBrands">{{w.name}}</a>
+      </div>
+      <div class="categories">
+        <h4>Categorie</h4>
+        <a *ngFor="let w of womenCategories">{{w.name}}</a>
+      </div>
+    </div>
+
+</div>
+<div class="dropdown-3">
+  <button class="dropbtn">PROMOZIONI</button>
+    <div class="dropdown-content-3">
+      <h4>Saldi</h4>
+      <a href="">Saldi Uomo</a>
+      <a href="">Saldi Donna</a>
+    </div>
+
+
+</div>
+ 

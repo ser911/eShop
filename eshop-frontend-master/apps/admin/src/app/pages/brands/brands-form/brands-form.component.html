@@ -1,0 +1,37 @@
+<p-toast></p-toast>
+<div class="admin-page">
+  <p-card [header]="editmode ? 'Edit brand': 'Add brand'" subheader="Here you can add or edit brands">
+    <div class="grid mb-5">
+      <div class="col-12">
+        <p-toolbar>
+          <div class="p-toolbar-group-left"></div>
+          <div class="p-toolbar-group-right">
+            <p-button styleClass="p-button-success mr-3" [label]="editmode ? 'Update': 'Create'" [icon]=" editmode ? 'pi pi-pencil': 'pi pi-plus'" (click)="onSubmit()">
+            </p-button>
+            <p-button styleClass="p-button-secondary" label="Back" icon="pi pi-arrow-circle-left" (click)="onBack()">
+            </p-button>
+          </div>
+        </p-toolbar>
+      </div>
+    </div>
+    <div class="grid">
+      <div class="col-12">
+        <form [formGroup]= "form">
+          <div class="p-fluid p-formgrid grid">
+            <div class="field col">
+              <label for="Name">Name</label>
+              <input formControlName="name" id="Name" type="text" pInputText>
+              <small *ngIf="brandForm.name.invalid && isSubmitted" class="p-error">Name is required</small>
+            </div>
+            <div class="field col">
+                <label for="name">Main Image</label>
+                <input type="file" class="p-inputtext" accept="image/*" (change)="onImageUpload($event)">
+                <small *ngIf="brandForm.image.invalid && isSubmitted" class="p-error">Image is required</small>
+            </div>
+          </div>
+
+        </form>
+      </div>
+    </div>
+  </p-card>
+</div>

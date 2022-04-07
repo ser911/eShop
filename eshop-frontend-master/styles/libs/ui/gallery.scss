@@ -1,0 +1,28 @@
+.gallery{
+    .main-image{
+        text-align: center;
+        height: 400px;
+        img{
+            max-width: 100%;
+            height: 100%;
+        }
+    }
+    .images{
+        ul{
+            display: flex;
+            margin: 0;
+            padding: 0;
+            justify-content: center;
+            margin-top: 30px;
+
+            li{
+                background-size: contain;
+                background-repeat: no-repeat;
+                width: 200px;
+                height: 200px;
+                display: block;
+                margin-right: 10px;
+            }
+        }
+    }
+}

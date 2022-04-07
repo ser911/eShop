@@ -1,0 +1,11 @@
+            <label for="gallery">Gallery</label>
+            <input type="file" id="gallery" class="p-inputtext" accept="images/*" (change)="onGalleryUpload($event)" multiple>
+
+            <div class=" col-12 mt-2 pl-0">
+              <img *ngFor="let file of galleryFiles" [src]="file" alt="image not available" style="width: 15%;">
+              
+            </div>
+            <div>
+              <p-button styleClass="p-button-success mr-3" label="Add gallery" (click)= onSubmit()>
+              </p-button>
+            </div>
