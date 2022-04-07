@@ -33,6 +33,8 @@ ngOnInit(): void {
     .subscribe((values) => {
       this.statistics = values;
     });
+    console.log(this.statistics[2]);
+    
 }
 
 ngOnDestroy() {

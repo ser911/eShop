@@ -40,12 +40,13 @@
           
           <div class="field col">
             <label for="Size">Size</label>
-            <p-inputNumber
+                      <input type="text" id="Size" formControlName="size" pInputText/>
+            <!-- <p-inputNumber
               formControlName="size"
               mode="decimal"
               inputId="size"
               type="number"
-            ></p-inputNumber>
+            ></p-inputNumber> -->
            <small *ngIf="variantForm.size.invalid && isSubmitted" class="p-error">size is required</small>
             
           </div>
