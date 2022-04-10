@@ -66,4 +66,30 @@
  
     }
 
+        @media only screen and (max-width: 868px){
+        .dropbtn{
+            padding: 16px 5px;
+        }
+        .dropdown-content, .dropdown-content-2, .dropdown-content-3{
+          padding: 8px;
+        }
+    }
+        @media only screen and (max-width: 692px){
+          .dropdown-content-3{
+            min-width: 100px;
+          }
+        .dropbtn, .brands, .categories, .dropdown-content-3{
+          font-size: 12px;
+        }
+               .dropdown-content, .dropdown-content-2, .dropdown-content-3{
+          padding: 4px;
+        }
+    }
+            @media only screen and (max-width: 584px){
+
+               .dropdown-content, .dropdown-content-2, .dropdown-content-3{
+          z-index: 200;
+        }
+    }
+
 

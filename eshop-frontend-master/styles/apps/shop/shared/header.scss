@@ -25,6 +25,8 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 31%, rgba(121,121,121,1) 1
         background-size: cover;
         background-position: center;
         position: relative;
+
+
     }
     .overlay{
         z-index: 10;
@@ -35,6 +37,12 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 31%, rgba(121,121,121,1) 1
         position: absolute;
         top: 0;
         left: 0;
+    }
+    .tools{
+        padding-top: 15px;
+        i{
+            font-size: 24px;
+        }
     }
     .z-top{
         height: 100%;
@@ -47,5 +55,85 @@ background: linear-gradient(0deg, rgba(255,255,255,1) 31%, rgba(121,121,121,1) 1
             margin-right: 5px;
             text-transform: capitalize;
         }
+    }
+    #nav-element{
+        display: flex;
+        align-items: flex-end;
+    }
+
+
+
+}
+    @media only screen and (max-width: 1291px) {
+    #whiteSpace{
+        display: none;
+    }
+    #nav-element{
+        width: 50%;
+    }
+    #search-element{
+        width: 50%;
+        justify-content: flex-end;
+    }
+    header img{
+        width: 60px;
+        margin-top: -15px;
+    }
+
+    .tools{
+        padding-right: 50px;
+        i{
+            font-size: 22px;
+        }
+    }
+
+     @media screen and (max-width: 948px) {
+         header{
+
+             .middle-space{
+                         width: 50%;
+                     }
+                     .tools{
+                         width: 25%;
+                         justify-content: flex-end;
+                         padding-right: 10px;
+                         i{
+                             font-size: 20px;
+                         }
+                     }
+            
+                    .header-logo{
+                        width: 25%;
+                        justify-content: flex-start;
+                    }
+             
+         }
+     }
+
+     @media only screen and (max-width: 868px){
+    header img{
+   margin-left: 25px;
+    }
+    }
+    @media only screen and (max-width: 688px){
+    header img{
+   margin-left: 40px;
+    }
+    }
+
+    @media only screen and (max-width: 584px){
+        #nav-element{
+            width: 100%;
+            justify-content: center;
+        }
+        #search-element{
+            width: 100%;
+        }
+        header{
+            img{
+                margin-left: -10px;
+            }
+        }
+        
     }
 }

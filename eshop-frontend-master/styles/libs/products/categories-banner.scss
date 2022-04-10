@@ -58,3 +58,36 @@
     text-align: center;
     padding: 20px;
 }
+
+@media only screen and (max-width: 868px){
+    .categories-banner{
+        margin-top: 25px;
+
+        .men{
+            background-size: 300px;
+            padding: 200px 0 80px;
+
+        }
+        .women{
+            background-size: 300px;
+            padding: 200px 0 80px;
+
+        }
+}
+    }
+    @media only screen and (max-width: 584px) {
+            .categories-banner{
+        margin-top: 15px;
+
+        .men{
+            background-size: 250px;
+            padding: 200px 0 50px;
+
+        }
+        .women{
+            background-size: 250px;
+            padding: 200px 0 50px;
+
+        }
+}
+    }
