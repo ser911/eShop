@@ -20,6 +20,11 @@
             &-break{
                 word-break: break-all;
             }
+            .p-field{
+                input{
+                    width: 50px;
+                }
+            }
             &-image{
                 img{
                     max-width: 100px;
@@ -51,3 +56,78 @@
 
     }
 }
+@media only screen and (max-width: 1280px){
+    .cart-page{
+        .cart{
+            &-item{
+                .cart-item-info{
+                    padding-left: 15px;
+                }
+            }
+        }
+    }
+ }
+ @media only screen and (max-width: 992px){
+    .cart-page{
+        .item{
+            width: 100%;
+        }
+        .cart{
+            &-item{
+                .cart-item-info{
+                    padding-left: 35px;
+                }
+            }
+        }
+        .oos{
+            width: 50%;
+        }
+    }
+ }
+ @media only screen and (max-width: 576px){
+    .cart-page{
+        .item{
+            width: 100%;
+        }
+        .cart{
+            &-item{
+                .cart-item-info{
+                    padding-left: 35px;
+                }
+
+            }
+        }
+        .cart-item-qty{
+            padding-left: 25px;
+        }
+        .oos{
+            width: 70%;
+        }
+    }
+ }
+
+ @media only screen and (max-width: 476px){
+    .cart-page{
+        .item{
+            width: 100%;
+        }
+        .cart{
+            &-item{
+                .cart-item-info{
+                    padding-left: 60px;
+                }
+
+            }
+
+        }
+        .cart-item-qty{
+            padding-left: 15px;
+            padding-top: 15px;
+        }
+        .oos{
+            width: 70%;
+            margin: 0 auto;
+        }
+    }
+ }
+

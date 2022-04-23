@@ -1,9 +1,91 @@
-.product{
+// .product{
 
  
+//     &-name{
+//         font-size: 2em;
+//     }
+//     &-desc{
+//         font-size: 1.4em;
+//     }
+//     &-rating{
+//         margin: 15px 0;
+//     }
+
+//     &-price{
+//         font-size: 1.2em;
+//         font-weight: 800;
+//         border-bottom: 1px solid var(--surface-300);
+//         padding: 25px 0;
+//     }
+
+//     &-quantity{
+//         margin: 25px 0;
+//     }
+
+//     .p-button{
+//         background-color: #682e42;
+//         border-color: #682e42;
+//         border: none;
+
+//         &:hover{
+//             background-color: goldenrod;
+//         }
+
+//       }
+
+//       .sizes{
+//           .size{            
+//           }
+
+//           .gold{
+//             background-color: goldenrod;
+//           }
+//           button{
+//               margin-right: 15px;
+//               height: 38px;
+//               width: 38px;
+//               outline: none;
+//               border: none;
+//               background-color: #682e42;
+//               color: white;
+//               cursor: pointer;
+//           }
+//          button:disabled{
+//             cursor: default;
+//             background-color: #000;
+//             opacity: 0.3;
+//           }
+
+          
+//       }
+
+      
+//     }
+//     .colors{
+//         display: flex;
+//         justify-content: center;
+//         .circle{
+//             height: 30px;
+//             width: 30px;
+//             border-radius: 50%;
+//             border: 1px solid black;
+//             margin-right: 15px;
+//             cursor: pointer;
+            
+            
+//         }
+//     }
+.product-name-sm, .rating-sm, .product-price-sm{
+    display: none;
+}
+
+.product{
+
+
     &-name{
         font-size: 2em;
     }
+
     &-desc{
         font-size: 1.4em;
     }
@@ -20,6 +102,10 @@
 
     &-quantity{
         margin: 25px 0;
+        input{
+            width: 70px;
+            margin-left: 15px;
+        }
     }
 
     .p-button{
@@ -32,6 +118,7 @@
         }
 
       }
+      
 
       .sizes{
           .size{            
@@ -42,6 +129,7 @@
           }
           button{
               margin-right: 15px;
+              margin-bottom: 8px;
               height: 38px;
               width: 38px;
               outline: none;
@@ -53,20 +141,31 @@
          button:disabled{
             cursor: default;
             background-color: #000;
-            opacity: 0.3;
+            opacity: 0.1;
           }
 
           
       }
+      .desc{
+          text-align: center;
 
+      }
+      .desc-box-small{
+          display: none;
+      }
       
     }
     .colors{
         display: flex;
-        justify-content: center;
+        justify-content: flex-start;
+        align-items: center;
+        h2{
+            margin-right: 15px;
+        }
+        
         .circle{
-            height: 30px;
-            width: 30px;
+            height: 2.2vw;
+            width: 2.2vw;
             border-radius: 50%;
             border: 1px solid black;
             margin-right: 15px;
@@ -75,3 +174,116 @@
             
         }
     }
+    .gallery-sm{
+        display: none;
+    }
+
+
+    @media only screen and (max-width: 580px){
+        .product{
+            &-name,&-price{
+                display: none;
+            }
+            
+            &-rating{
+                display: none;
+            }
+
+            &-quantity{
+             margin: 25px auto;
+                
+                label{
+                    display: none;
+                }
+            }
+            .sizes{
+                text-align: center;
+            }
+        }
+        
+        .product-name-sm, .product-price-sm{
+            width: 100%;
+            text-align: center;
+            padding-bottom: 15px;
+        }
+        .product-name-sm, .rating-sm, .product-price-sm{
+            display: block;
+        }
+
+        .colors{
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            h2{
+            
+            }
+            
+            .circle{
+                height: 2.2vw;
+                width: 2.2vw;
+                border-radius: 50%;
+                border: 1px solid black;
+                margin-right: 15px;
+                cursor: pointer;
+                
+                
+            }
+        }
+        .gallery{
+            width: 100%;
+        }
+    }
+
+    @media only screen and (max-width: 450px){
+
+.product{
+
+
+        .sizes{
+            text-align: center;
+            .size{            
+            }
+  
+            .gold{
+              background-color: goldenrod;
+            }
+            button{
+                margin-right: 5px;
+                height: 32px;
+                width: 32px;
+
+            }
+           button:disabled{
+              cursor: default;
+              background-color: #000;
+              opacity: 0.1;
+            }
+  
+            
+        }
+
+        &-action{
+            text-align: center;
+        }
+    }
+    .colors{
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        h2{
+        
+        }
+        
+        .circle{
+            height: 3.5vw;
+            width: 3.5vw;
+            border-radius: 50%;
+            border: 1px solid black;
+            margin-right: 15px;
+            cursor: pointer;
+            
+            
+        }
+    }
+}
+   

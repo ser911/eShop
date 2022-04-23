@@ -1,4 +1,4 @@
-<div class="product-page" *ngIf="product">
+<!-- <div class="product-page" *ngIf="product">
     <div class="grid">
         <div class="col-6">
             <ui-gallery [images]="product.images" [image]="product.image" [product]="product" ></ui-gallery>
@@ -56,4 +56,81 @@
 </div>
 
     </div>
+</div> -->
+
+<div class="product-page" *ngIf="product">
+  <div class="grid">
+    <div class="product-name-sm sm:col-12">
+      <h2>{{product.name}}</h2>
+
+    </div>
+    <!-- 
+        <div class="rating-sm">
+            <p-rating [(ngModel)]="product.rating" [disabled]="true" [cancel]="false"></p-rating>
+        </div> -->
+    <div class="product-price-sm">
+      {{product.price | currency}}
+    </div>
+
+    <div class="sm:col-6 md:col-6 lg:col-6 xl:col-6 gallery">
+      <ui-gallery [images]="product.images" [image]="product.image" [product]="product"></ui-gallery>
+    </div>
+
+    <div class="sm:col-6 md:col-6 lg:col-6 xl:col-6 product">
+      <div class="product-name">
+        <h2>{{product.name}}</h2>
+
+      </div>
+      <!-- 
+            <div class="rating">
+                <p-rating [(ngModel)]="product.rating" [disabled]="true" [cancel]="false"></p-rating>
+            </div> -->
+      <div class="product-price">
+        {{product.price | currency}}
+      </div>
+
+      <div class="sm:col-12 md:col-12 lg:col-12 xl:col-12 pt-2 pb-4">
+        <div class="grid">
+
+
+
+          <div class="colors col-12" *ngIf="multipleColors">
+            <h2>Colors</h2>
+            <div [style.background-color]="product.color" class="circle" *ngFor="let product of products, let i = index"
+              (click)="selectColor(product.id)"></div>
+
+          </div>
+          <div class="sizes col-12">
+            <h2>Sizes</h2>
+            <button [ngClass]="{gold: clickedIndex === i}" class="size" [disabled]="f.available? false : true"
+              *ngFor="let f of filteredVariants, let i = index" (click)="selectSize($event)"
+              (click)="clickedIndex = i">{{f.size}}</button>
+          </div>
+
+          <div class="product-quantity">
+            <div class="field col-12 md:col-3">
+              <label for="quantity">Quantity</label>
+              <p-inputNumber [(ngModel)]="quantity" inputId="quantity" mode="decimal" [showButtons]="true"
+                [min]="minInv" [max]="maxInv">
+              </p-inputNumber>
+            </div>
+          </div>
+          <div class="product-action col-12">
+            <button pButton pRipple type="button" label="Add to cart" class="p-button-rounded"
+              (click)="addProductToCart()">
+            </button>
+          </div>
+
+          <div class="col-9 desc-box">
+            <div class="desc" [innerHTML]="product.description"></div>
+          </div>
+
+        </div>
+        <div class="col-9 desc-box-small">
+          <div class="desc" [innerHTML]="product.description"></div>
+        </div>
+      </div>
+    </div>
+
+  </div>
 </div>
