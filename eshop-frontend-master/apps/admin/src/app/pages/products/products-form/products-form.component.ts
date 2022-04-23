@@ -53,6 +53,10 @@ export class ProductsFormComponent implements OnInit {
       brand: ['', Validators.required],
       price: ['', Validators.required],
       isFeatured: [false],
+      rating: [''],
+      color: [''],
+      discount: [0],
+      factoryCode: [''],
     });
   }
 
@@ -138,6 +142,11 @@ export class ProductsFormComponent implements OnInit {
           this.productForm.category.setValue(product.category.id)
           this.productForm.isFeatured.setValue(product.isFeatured);
           this.productForm.description.setValue(product.description);
+          this.productForm.image.setValue(product.image);
+          this.productForm.rating.setValue(product.rating);
+          this.productForm.color.setValue(product.color);
+          this.productForm.discount.setValue(product.discount);
+          this.productForm.factoryCode.setValue(product.factoryCode);                 
           this.productForm.image.setValidators([]);
           this.productForm.image.updateValueAndValidity();
           this.galleryFiles = product.images;

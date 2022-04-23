@@ -40,6 +40,8 @@ export class BrandsFormComponent implements OnInit, OnDestroy {
     this.form = this.formBuilder.group({
       name: ['', Validators.required],
       image: [''],
+      m: [''],
+      w: ['']
     });
   }
 
@@ -110,6 +112,9 @@ export class BrandsFormComponent implements OnInit, OnDestroy {
         this.brandsService.getBrand(params.id).subscribe((brand) => {
           this.brandForm.name.setValue(brand.name);
           this.imageDisplay = brand.image;
+          this.brandForm.image.setValue(brand.image);
+          this.brandForm.m.setValue(brand.m);
+          this.brandForm.w.setValue(brand.w);        
         });
       }
     });

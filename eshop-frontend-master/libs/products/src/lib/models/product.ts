@@ -14,5 +14,7 @@ export class Product {
     isFeatured?: boolean;
     rating?: number;
     color?: string;
+    discount?: number;
+    factoryCode: string;
     variants?: Variant[];
 }

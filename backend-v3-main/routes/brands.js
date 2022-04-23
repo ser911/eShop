@@ -71,7 +71,9 @@ router.post(`/`, uploadOptions.single('image'), async(req,res)=>{
 
     let brand = new Brand({
         name: req.body.name,
-        image: `${basePath}${fileName}`
+        image: `${basePath}${fileName}`,
+        m: req.body.m,
+        w: req.body.w,
     })
 
     brand = await brand.save();
@@ -98,7 +100,9 @@ router.put(`/:id`, uploadOptions.single('image'), async(req,res)=>{
     const updatedBrand = await Brand.findByIdAndUpdate(
         req.params.id,{
             name: req.body.name,
-            image: imagepath
+            image: imagepath,
+            m: req.body.m,
+            w: req.body.w,
         },{new: true}
     )
 
