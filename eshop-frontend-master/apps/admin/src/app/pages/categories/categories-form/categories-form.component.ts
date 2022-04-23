@@ -34,6 +34,8 @@ export class CategoriesFormComponent implements OnInit, OnDestroy {
       name: ['', Validators.required],
       icon: ['', Validators.required],
       color: ['#fff'],
+      m: [''],
+      w: ['']
     });
 
     this._checkEditMode();
@@ -57,6 +59,8 @@ export class CategoriesFormComponent implements OnInit, OnDestroy {
       name: this.categoryForm.name.value,
       icon: this.categoryForm.icon.value,
       color: this.categoryForm.color.value,
+      m: this.categoryForm.m.value,
+      w: this.categoryForm.w.value,
     };
 
     if (this.editmode) {
@@ -123,7 +127,8 @@ export class CategoriesFormComponent implements OnInit, OnDestroy {
           this.categoryForm.name.setValue(category.name);
           this.categoryForm.icon.setValue(category.icon);
           this.categoryForm.color.setValue(category.color);
-
+          this.categoryForm.m.setValue(category.m);
+          this.categoryForm.w.setValue(category.w);
         });
       }
     });

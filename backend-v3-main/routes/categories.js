@@ -25,7 +25,9 @@ router.post('/', async (req,res)=>{
     let category = new Category({
       name: req.body.name,
       icon: req.body.icon,
-      color: req.body.color  
+      color: req.body.color,
+      m: req.body.m,
+      w: req.body.w
     })
     category = await category.save();
 
@@ -42,6 +44,8 @@ router.put('/:id', async(req,res)=>{
             name: req.body.name,
             icon: req.body.icon,
             color: req.body.color,
+            m: req.body.m,
+            w: req.body.w
         }
     )
     if(!category){

@@ -12,6 +12,14 @@ const categorySchema = mongoose.Schema({
     color:{
         type: String
     },
+    m: {
+        type: Boolean,
+        required: true
+     },
+     w: {
+        type: Boolean,
+        required: true
+            }
 })
 
 categorySchema.virtual('id').get(function () {
