@@ -29,12 +29,12 @@
               <input type="file" class="p-inputtext" accept="image/*" (change)="onImageUpload($event)" />
               <small *ngIf="brandForm.image.invalid && isSubmitted" class="p-error">Image is required</small>
             </div>
-            <div class="field col">
-              <label for="m" style="padding-left: 25%;">Men</label>
-              <p-inputSwitch style="padding-left: 25%;" formControlName="m"></p-inputSwitch>
+            <div class="field col" style="text-align: center;">
+              <label for="m" >Men</label>
+              <p-inputSwitch  formControlName="m"></p-inputSwitch>
               <small *ngIf="brandForm.m.invalid && isSubmitted" class="p-error">required</small>
             </div>
-            <div class="field col">
+            <div class="field col" style="text-align: center;">
                      <label for="w">Women</label>
                      <p-inputSwitch formControlName="w"></p-inputSwitch>
                      <small *ngIf="brandForm.w.invalid && isSubmitted" class="p-error">required</small>

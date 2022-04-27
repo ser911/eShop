@@ -12,7 +12,7 @@
     </div>
     <div class="grid">
       <div class="col-12">
-        <p-table [paginator]="true" [rows]= 10 [value]="products" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+        <p-table [paginator]="true" [rows]= 10 [value]="products" styleClass="p-datatable-gridlines" responsiveLayout="stack">
           <ng-template pTemplate="header">
             <tr>
               <th pSortableColumn="name">
@@ -34,12 +34,12 @@
           </ng-template>
           <ng-template pTemplate="body" let-product>
             <tr>
-              <td>{{ product.name }}</td>
-              <td> <img [src]="product.image" alt="no img available" style="max-width: 150px; cursor: pointer;" (click)="goToVariants(product.id)"></td>
-              <!-- <td>{{product.brand.name}}</td> -->
-              <td>{{ product.price }}</td>
-              <td>{{product.category.name}}</td>
-              <td>
+              <td class="tab-data">{{ product.name }}</td>
+              <td class="tab-data"> <img [src]="product.image" alt="no img available" style="max-width: 150px; cursor: pointer;" (click)="goToVariants(product.id)"></td>
+              <!-- <td> <img [src]="product.brand.image" style="width: 150px;"></td> -->
+              <td class="tab-data">{{ product.price }}</td>
+              <td class="tab-data">{{product.category.name}}</td>
+              <td class="tab-data">
                 <p-button (click)="deleteProduct(product.id)" styleClass="p-button-danger mr-2" icon="pi pi-trash">
                 </p-button>
                 <p-button (click)="updateProduct(product.id)" styleClass="p-button-success" icon="pi pi-pencil">

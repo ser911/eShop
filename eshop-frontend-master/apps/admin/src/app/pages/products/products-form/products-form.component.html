@@ -18,49 +18,52 @@
     <div class="col-12">
       <form [formGroup]="form">
         <div class="grid">
-          <div class="field col-3">
+          <div class="field sm:col-4 md:col-3 lg:col-3 xl:col-3">
             <label for="Name">Name</label>
 
             <input formControlName="name" id="Name" type="text" pInputText />
             <small *ngIf="productForm.name.invalid && isSubmitted" class="p-error">Name is required</small>
           </div>
 
-          <div class="field col-3">
+          <div class="field sm:col-4 md:col-3 lg:col-3 xl:col-3">
             <label for="Brand">Brand</label>
             <!-- <input formControlName="brand" id="Brand" type="text" pInputText /> -->
-            <p-dropdown [options]="brands"
+            <p-dropdown
+            class="except"
+             [options]="brands"
             formControlName="brand"
              optionLabel="name"
              optionValue="id"
              [filter]="true"
              filterBy="name"
             [showClear]="true"
-            placeholder="Select a brand">
+           >
 </p-dropdown>
             <small *ngIf="productForm.brand.invalid && isSubmitted" class="p-error">Brand is required</small>
           </div>
-          <div class="field col-3">
+          <div class="field sm:col-4 md:col-3 lg:col-3 xl:col-3">
             <label for="Price">Price</label>
             <p-inputNumber formControlName="price" mode="currency" currency="EUR" inputId="price" type="number"></p-inputNumber>
             <small *ngIf="productForm.price.invalid && isSubmitted" class="p-error">Price is required</small>
           </div>
-          <div class="field col-3">
+          <div class="field sm:col-4 md:col-3 lg:col-3 xl:col-3">
             <label for="Sex">Sex</label>
             <input formControlName="sex" id="Sex" type="text" pInputText />
             <small *ngIf="productForm.sex.invalid && isSubmitted" class="p-error">Sex is required</small>
           </div>
         </div>
         <div class="grid">
-          <div class="field col-3">
+          <div class="field sm:col-4 md:col-3 lg:col-3 xl:col-3">
             <label for="category">Category</label>
-            <p-dropdown [options]="categories"
+            <p-dropdown class="except"
+                        [options]="categories"
                         formControlName="category"
                          optionLabel="name"
                          optionValue="id"
                          [filter]="true"
                          filterBy="name"
                         [showClear]="true"
-                        placeholder="Select a category">
+                        >
             </p-dropdown>
             <small *ngIf="productForm.category.invalid && isSubmitted" class="p-error">Category is required</small>
           </div>
@@ -69,11 +72,11 @@
             <p-inputSwitch formControlName="isFeatured" id="isFeatured"> </p-inputSwitch>
 
           </div>
-          <div class="field col-3">
+          <div class="field sm:col-4 md:col-3 lg:col-3 xl:col-3">
             <label for="discount">Discount</label>
             <input type="number" value="0" id="discount" formControlName="discount" min="0" max="70" pInputText/>
           </div>
-          <div class="field col-3">
+          <div class="field sm:col-4 md:col-3 lg:col-3 xl:col-3">
             <label for="factoryCode">Factory Code</label>
             <input type="text" id="factoryCode" formControlName="factoryCode" pInputText/>
             <!-- <small *ngIf="productForm.factoryCode.invalid && isSubmitted" class="p-error">Factory Code is required</small> -->
@@ -82,13 +85,13 @@
           
 
         <div class="grid">
-          <div class="field col-12">
+          <div class="field lg:col-12 xl:col-12">
             <label for="description">Description</label>
             <p-editor formControlName="description" [style]="{'height':'320px'}"></p-editor>
             <small *ngIf="productForm.description.invalid && isSubmitted" class="p-error">Description is
               required</small>
           </div>
-          <div class="field col-12">
+          <div class="field lg:col-12 xl:col-12">
             <label for="name">Main Image</label>
             <input type="file" class="p-inputtext" accept="image/*" (change)="onImageUpload($event)">
             <small *ngIf="productForm.image.invalid && isSubmitted" class="p-error">Image is required</small>

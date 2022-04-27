@@ -1,7 +1,7 @@
 <div class="admin-page">
     <p-card header="Dashboard" subheader="Latest updates">
         <div class="grid">
-            <div class="col-4">
+            <div class="col-12 sm:col-12 md:col-4 orders-section">
                 <p-card styleClass="d-orders">
                     <div class="d-item">
                         <div>
@@ -13,13 +13,14 @@
                 </p-card>
             </div>
 
-            <div class="col-4">
+            <div class="col-12 sm:col-12  md:col-4 products-section">
                 <p-card styleClass="d-products">
                     <div class="d-item">
                         <div>
                             <i class="pi pi-briefcase"></i> <br/>
                             <span class="name">Products</span>
                         </div>
+                        
                         <span class="number">{{statistics[1]}}</span>
                     </div>
                 </p-card>
@@ -37,7 +38,7 @@
                 </p-card>
             </div>  -->
 
-            <div class="col-4">
+            <div class="col-12 sm:col-12 md:col-4 sales-section">
                 <p-card styleClass="d-totalsales">
                     <div class="d-item">
                         <div>

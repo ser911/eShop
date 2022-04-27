@@ -17,7 +17,7 @@
     </div>
     <div class="grid">
         <div class="col-12">
-            <p-table [value]="categories" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+            <p-table [value]="categories" styleClass="p-datatable-gridlines" responsiveLayout="stack">
               <ng-template pTemplate="header">
                 <tr>
                  <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
@@ -29,11 +29,11 @@
               <ng-template pTemplate="body" let-category>
                 <tr>
 
-                  <td>{{category.name}}</td>
-                  <td><i class="pi" [ngClass]="'pi-' + category.icon"></i></td>
-                  <td> <i class="pi pi-circle-on" style="font-size: 2rem" [ngStyle]="{ color: category.color }"></i>
+                  <td class="tab-data">{{category.name}}</td>
+                  <td class="tab-data"><i class="pi" [ngClass]="'pi-' + category.icon"></i></td>
+                  <td class="tab-data"> <i class="pi pi-circle-on" style="font-size: 2rem" [ngStyle]="{ color: category.color }"></i>
                   </td>
-                  <td>
+                  <td class="tab-data">
                     <p-button (click)="deleteCategory(category.id)" styleClass="p-button-danger mr-2" icon="pi pi-trash"></p-button>
                     <p-button (click)="updateCategory(category.id)" styleClass="p-button-success" icon="pi pi-pencil"></p-button>
                   </td>

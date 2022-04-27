@@ -74,6 +74,17 @@
           padding: 8px;
         }
     }
+        @media only screen and (max-width: 767px){
+          .dropdown-content a, .dropdown-content-2 a, .dropdown-content-3 a{
+      color: black;
+      padding: 6px 12px;
+      text-decoration: none;
+      display: block;
+      cursor: pointer;
+    }
+    
+    }
+    
         @media only screen and (max-width: 692px){
           .dropdown-content-3{
             min-width: 100px;

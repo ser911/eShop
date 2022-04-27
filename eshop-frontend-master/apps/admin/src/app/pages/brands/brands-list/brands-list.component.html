@@ -12,7 +12,7 @@
     </div>
     <div class="grid">
       <div class="col-12">
-        <p-table [paginator]="true" [rows]= 10 [value]="brands" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+        <p-table [paginator]="true" [rows]= 10 [value]="brands" styleClass="p-datatable-gridlines" responsiveLayout="stack">
           <ng-template pTemplate="header">
             <tr>
               <th pSortableColumn="name">
@@ -24,9 +24,9 @@
           </ng-template>
           <ng-template pTemplate="body" let-brand>
             <tr>
-              <td>{{ brand.name }}</td>
-              <td> <img [src]="brand.image" alt="no img available" style="max-width: 150px;"> </td>
-              <td>
+              <td class="tab-data">{{ brand.name }}</td>
+              <td class="tab-data"> <img [src]="brand.image" alt="no img available" style="max-width: 150px;"> </td>
+              <td class="tab-data">
                 <p-button (click)="deleteBrand(brand.id)" styleClass="p-button-danger mr-2" icon="pi pi-trash">
                 </p-button>
                 <p-button (click)="updateBrand(brand.id)" styleClass="p-button-success" icon="pi pi-pencil">

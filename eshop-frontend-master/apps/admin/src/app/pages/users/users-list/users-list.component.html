@@ -17,7 +17,7 @@
     </div>
     <div class="grid">
         <div class="col-12">
-            <p-table [value]="users" styleClass="p-datatable-gridlines" responsiveLayout="scroll">
+            <p-table [value]="users" styleClass="p-datatable-gridlines" responsiveLayout="stack">
               <ng-template pTemplate="header">
                 <tr>
                  <th pSortableColumn="name">Name <p-sortIcon field="name"></p-sortIcon></th>
@@ -28,11 +28,11 @@
               <ng-template pTemplate="body" let-user>
                 <tr>
 
-                  <td>{{user.name}}</td>
-                  <td>{{user.email}}</td>
-                  <td><p-tag *ngIf="!user.isAdmin" icon="pi pi-check" severity="success"></p-tag></td>
+                  <td class="tab-data">{{user.name}}</td>
+                  <td class="tab-data">{{user.email}}</td>
+                  <td class="tab-data"><p-tag *ngIf="!user.isAdmin" icon="pi pi-check" severity="success"></p-tag></td>
 
-                  <td>
+                  <td class="tab-data">
                     <p-button (click)="deleteUser(user.id)" styleClass="p-button-danger mr-2" icon="pi pi-trash"></p-button>
                     <p-button (click)="updateUser(user.id)" styleClass="p-button-success" icon="pi pi-pencil"></p-button>
                   </td>

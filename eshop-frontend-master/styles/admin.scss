@@ -10,9 +10,11 @@
 @import '~primeng/resources/primeng.min.css';
 @import '~primeflex/primeflex.css';
 
-//Shared
+//Admin-specific
 @import './apps/admin/shell.scss';
 @import './apps/admin/dashboard.scss';
+@import './apps/admin//products.scss';
+@import './apps/admin/categories.scss';
 
 //Libs
 @import './libs/ui/ui.scss';
