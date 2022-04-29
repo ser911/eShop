@@ -19,11 +19,11 @@
     <div class="dropdown-content-2">
       <div class="brands">
         <h4>Brands</h4>
-        <a *ngFor="let w of womenBrands">{{w.name}}</a>
+        <a *ngFor="let w of womenBrands" (click)="navigateToWBrand(w.id)">{{w.name}}</a>
       </div>
       <div class="categories">
         <h4>Categorie</h4>
-        <a *ngFor="let w of womenCategories">{{w.name}}</a>
+        <a *ngFor="let w of womenCategories" (click)="navigateToWCat(w.id)">{{w.name}}</a>
       </div>
     </div>
 

@@ -31,6 +31,14 @@ function authJwt() {
         url: /\/api\/v1\/brands(.*)/,
         methods: ["GET", "OPTIONS", "POST"],
       },
+      {
+       url: /\/api\/v1\/women-products(.*)/,
+       methods: ["GET", "OPTIONS", "POST"],
+      },
+      {
+       url: /\/api\/v1\/w-variants(.*)/,
+       methods: ["GET", "OPTIONS", "POST"],
+      },
       "/api/v1/users/login",
       "/api/v1/users/register",
     

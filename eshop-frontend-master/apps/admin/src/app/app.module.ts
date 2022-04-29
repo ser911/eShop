@@ -52,6 +52,11 @@ import { BrandsListComponent } from './pages/brands/brands-list/brands-list.comp
 import { BrandsFormComponent } from './pages/brands/brands-form/brands-form.component';
 import { GalleryUploadComponent } from './pages/products/products-form/gallery-upload/gallery-upload.component';
 import { VariantsFormEditComponent } from './pages/variants/variants-form-edit/variants-form-edit.component';
+import { WProductsListComponent } from './pages/w-products/w-products-list/w-products-list.component';
+import { WProductsFormComponent } from './pages/w-products/w-products-form/w-products-form.component';
+import { WVariantsFormComponent } from './pages/w-variants/w-variants-form/w-variants-form.component';
+import { WVariantsFormEditComponent } from './pages/w-variants/w-variants-form-edit/w-variants-form-edit.component';
+import { WVariantsListComponent } from './pages/w-variants/w-variants-list/w-variants-list.component';
 
 
 
@@ -90,15 +95,27 @@ const routes: Routes = [
       { path: 'categories', component: CategoriesListComponent },
       { path: 'categories/form', component: CategoriesFormComponent },
       { path: 'categories/form/:id', component: CategoriesFormComponent },
+
       { path: 'brands', component: BrandsListComponent},
       { path: 'brands/form', component: BrandsFormComponent},
       { path: 'brands/form/:id', component: BrandsFormComponent},
+
       { path: 'products', component: ProductsListComponent },
       { path: 'products/form', component: ProductsFormComponent },
       { path: 'products/form/:id', component: ProductsFormComponent },
+
       { path: 'variants/product/:id', component: VariantsListComponent },
       { path: 'variants/product/:id/form', component: VariantsFormComponent},
-      { path: 'variants/product/:id/form/edit', component: VariantsFormEditComponent},     
+      { path: 'variants/product/:id/form/edit', component: VariantsFormEditComponent},  
+      
+      { path: 'women-products', component: WProductsListComponent },
+      { path: 'women-products/form', component: WProductsFormComponent },
+      { path: 'women-products/form/:id', component: WProductsFormComponent },
+
+      { path: 'variants/women-product/:id', component: WVariantsListComponent },
+      { path: 'variants/women-product/:id/form', component: WVariantsFormComponent},
+      { path: 'variants/women-product/:id/form/edit', component: WVariantsFormEditComponent},
+
       { path: 'users', component: UsersListComponent },
       { path: 'users/form', component: UsersFormComponent },
       { path: 'users/form/:id', component: UsersFormComponent },
@@ -130,7 +147,12 @@ const routes: Routes = [
      BrandsListComponent,
      BrandsFormComponent,
      GalleryUploadComponent,
-     VariantsFormEditComponent
+     VariantsFormEditComponent,
+     WProductsListComponent,
+     WProductsFormComponent,
+     WVariantsFormComponent,
+     WVariantsFormEditComponent,
+     WVariantsListComponent
      ],
   imports: [
     BrowserModule,

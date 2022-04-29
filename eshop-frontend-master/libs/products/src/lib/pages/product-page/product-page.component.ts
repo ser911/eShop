@@ -1,13 +1,14 @@
 import { Component, OnDestroy, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
-// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries
+// eslint-disable-next-line @nrwl/nx/enforce-module-boundaries 
 import { CartService, CartItem } from '@eshop-frontend/orders';
-import { Subject, takeUntil } from 'rxjs';
+import { Subject, take, takeUntil } from 'rxjs';
 import { Product } from '../../models/product';
 import { ProductsService } from '../../services/products.service';
 import { Variant } from '../../models/variant';
 import { VariantsService } from '../../services/variants.service';
 import { Location } from '@angular/common';
+import { W_ProductsService } from '../../services/w-products.service';
 
 
 
@@ -38,6 +39,7 @@ export class ProductPageComponent implements OnInit, OnDestroy {
   maxInv: number;
   url;
   constructor(private prodService: ProductsService,
+              private WprodService: W_ProductsService,
               private route: ActivatedRoute,
               private router: Router,
               private cartService: CartService,
@@ -45,24 +47,37 @@ export class ProductPageComponent implements OnInit, OnDestroy {
               private location: Location) { }
 
   ngOnInit(): void {
-    this.route.params.subscribe(params =>{
-      if(params.productId){
-        this._getProduct(params.productId);
-        this.currentId = params.productId;
-        console.log(this.currentId);
-        // this.prodName = this.product.name
-        // console.log(this.prodName);
-        
-      }
-this.url = this.route.url;
-console.log(this.url.value[1].path);
+    
+    this.url = this.route.url;
 
-    })
+    if(this.url.value[0].path === 'products'){
+      
+      this.route.params.subscribe(params =>{
+        if(params.productId){
+          this._getProduct(params.productId);
+          this.currentId = params.productId;
+          console.log(this.currentId);
+          // this.prodName = this.product.name
+          // console.log(this.prodName);
+          
+        }
+  
+      })
+      
+      this._getSizes();
+    }else{
+            this.route.params.subscribe((params) => {
+              if (params.productId) {
+                this._getWproduct(params.productId);
+                this.currentId = params.productId;
+                console.log(this.currentId);
+                // this.prodName = this.product.name
+                // console.log(this.prodName);
+              }
+            });
 
-
-   this._getSizes();
-
-
+            this._getSizes();
+    }
   }
 
   ngOnDestroy(): void {
@@ -88,6 +103,13 @@ console.log(this.url.value[1].path);
     })
     
 
+  }
+
+  private _getWproduct(id: string){
+    this.WprodService.getWProduct(id).pipe(takeUntil(this.endSubs$)).subscribe(resProduct =>{
+      this.product = resProduct;
+
+    })
   }
 
   _getSizes(){
@@ -142,6 +164,8 @@ console.log(this.url.value[1].path);
 
     
   }
+
+
 
   selectColor(prodId){
 console.log(prodId);

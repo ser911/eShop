@@ -39,7 +39,7 @@ export class NavComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.endSubs$))
       .subscribe((categories) => {
         this.categories = categories;
-        this.womenCategories = categories.filter((x)=> x.w === true)
+        this.womenCategories = categories.filter((x) => x.w === true);
       });
   }
 
@@ -49,7 +49,7 @@ export class NavComponent implements OnInit, OnDestroy {
       .pipe(takeUntil(this.endSubs$))
       .subscribe((brands) => {
         this.brands = brands;
-        this.womenBrands = this.brands.filter((x)=> x.w === true);
+        this.womenBrands = this.brands.filter((x) => x.w === true);
       });
   }
 
@@ -58,7 +58,16 @@ export class NavComponent implements OnInit, OnDestroy {
   }
 
   navigateToCat(catId) {
-    this.router.navigate(['/products/category/' + catId ]);
+    this.router.navigate(['/products/category/' + catId]);
+    console.log(catId);
+  }
+
+  navigateToWBrand(brandId) {
+    this.router.navigate([`/women-products/brand/${brandId}`]);
+  }
+
+  navigateToWCat(catId) {
+    this.router.navigate(['/women-products/category/' + catId]);
     console.log(catId);
   }
 }

@@ -18,26 +18,45 @@ import {InputNumberModule} from 'primeng/inputnumber';
 import { UiModule } from '@eshop-frontend/ui';
 import { ProductsBrandsComponent } from './pages/products-brands/products-brands.component';
 
+import { WomenProductsListComponent } from './pages/women-products-list/women-products-list.component';
+import { WomenProductsBrandsComponent } from './pages/women-products-brands/women-products-brands.component';
+
 
 
 const routes: Routes = [
   {
     path: 'products',
-    component: ProductsListComponent
+    component: ProductsListComponent,
   },
   {
     path: 'products/category/:categoryid',
-    component: ProductsListComponent
+    component: ProductsListComponent,
   },
   {
     path: 'products/:productId',
-    component: ProductPageComponent
+    component: ProductPageComponent,
   },
   {
     path: 'products/brand/:brandId',
-    component: ProductsBrandsComponent
-  }
-]
+    component: ProductsBrandsComponent,
+  },
+  {
+    path: 'women-products',
+    component: WomenProductsListComponent,
+  },
+  {
+    path: 'women-products/:productId',
+    component: ProductPageComponent,
+  },
+  {
+    path: 'women-products/category/:categoryid',
+    component: WomenProductsListComponent,
+  },
+  {
+    path: 'women-products/brand/:brandId',
+    component: WomenProductsBrandsComponent,
+  },
+];
 
 @NgModule({
   imports: [CommonModule,
@@ -57,7 +76,9 @@ const routes: Routes = [
     FeaturedProductsComponent,
     ProductsListComponent,
     ProductPageComponent,
-    ProductsBrandsComponent
+    ProductsBrandsComponent,
+    WomenProductsListComponent,
+    WomenProductsBrandsComponent
   ],
   exports: [
     ProductsSearchComponent,

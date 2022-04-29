@@ -32,10 +32,6 @@
           <input formControlName="product" id="Product" type="text" pInputText/>
          <small *ngIf="variantForm.product.invalid && isSubmitted" class="p-error">Product is required</small>
 
-
-          <!-- <label for="Color">Color</label>
-          <input formControlName="color" id="Color" type="text" pInputText />
-         <small *ngIf="variantForm.color.invalid && isSubmitted" class="p-error">Color is required</small> -->
           <div>
             <label for="Size">Size</label>
             <!-- <p-inputNumber
@@ -60,18 +56,20 @@
         </div>
           <div>
             <div class="field col">
-              <label for="barcode">Barcode</label>
-              <input type="text" id="barcode" formControlName="barcode" pInputText/>
-              <small *ngIf="variantForm.barcode.invalid && isSubmitted" class="p-error">Barcode is required</small>
-            </div>
-            <!-- <label for="name">Main Image</label>
-            <input type="file" class="p-inputtext" accept="image/*" />
-            <small *ngIf="variantForm.image.invalid && isSubmitted" class="p-error">Image is required</small>  -->
+              <label for="available">Available</label>
+                     <p-inputSwitch formControlName="available" id="available"> </p-inputSwitch>
 
-            <!-- <div class="col-2 mt-2 pl-0">
-              <img alt="" style="width: 100%" />
-            </div> -->
+              <small *ngIf="variantForm.available.invalid && isSubmitted" class="p-error">
+                Availability is required</small>
+            </div>
+
           </div>
+                      <div class="field col">
+                        <label for="available">Barcode</label>
+                        <input type="text" id="barcode" formControlName="barcode" pInputText />
+                        <small *ngIf="variantForm.barcode.invalid && isSubmitted" class="p-error">Barcode is
+                          required</small>
+                      </div>
           <div class="mt-2">
 
           </div>

@@ -23,6 +23,7 @@ export class ProductsService {
     return this.http.get<Product[]>(this.apiUrlProducts, { params: params });
   }
 
+
   getProductsByBrand(brandId: string): Observable<Product[]>{
     return this.http.get<Product[]>(`${this.apiUrlProducts}/brand/${brandId}`)
   }

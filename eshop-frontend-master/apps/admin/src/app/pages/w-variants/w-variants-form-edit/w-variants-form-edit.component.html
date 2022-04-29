@@ -1,0 +1,63 @@
+ <p-toast></p-toast>
+ <p-card header="Edit Product size">
+   <div class="grid mb-5">
+     <div class="col-12">
+       <p-toolbar>
+         <div class="p-toolbar-group-left"></div>
+         <div class="p-toolbar-group-right">
+           <p-button styleClass="p-button-success mr-3" label="Update" icon="pi pi-pencil" (click)="onSubmit()">
+           </p-button>
+           <p-button styleClass="p-button-secondary" label="Back" icon="pi pi-arrow-circle-left" (click)="back()">
+           </p-button>
+         </div>
+       </p-toolbar>
+     </div>
+   </div>
+   <div class="grid">
+     <div class="col-12">
+       <form [formGroup]="form">
+         <div class="field col">
+
+           <label for="Product">Product</label>
+           <input formControlName="product" id="Product" type="text" pInputText />
+           <small *ngIf="variantForm.product.invalid && isSubmitted" class="p-error">Product is required</small>
+         </div>
+
+         <!-- <label for="Color">Color</label>
+
+          <input formControlName="color" id="Color" type="text" pInputText />
+         <small *ngIf="variantForm.color.invalid && isSubmitted" class="p-error">Color is required</small> -->
+
+         <div class="field col">
+           <label for="Size">Size</label>
+           <input type="text" id="Size" formControlName="size" pInputText />
+           <!-- <p-inputNumber
+              formControlName="size"
+              mode="decimal"
+              inputId="size"
+              type="number"
+            ></p-inputNumber> -->
+           <small *ngIf="variantForm.size.invalid && isSubmitted" class="p-error">size is required</small>
+
+         </div>
+         <div class="field col">
+           <label for="Inventory">Inventory</label>
+           <input formControlName="inventory" id="Inventory" type="number" pInputText />
+           <small *ngIf="variantForm.inventory.invalid && isSubmitted" class="p-error">Inventory is required</small>
+         </div>
+
+         <div class="field col">
+           <label for="barcode">Barcode</label>
+           <input type="text" id="barcode" formControlName="barcode" pInputText />
+           <small *ngIf="variantForm.barcode.invalid && isSubmitted" class="p-error">Barcode is required</small>
+         </div>
+
+         <div class="field col">
+           <label for="available">Available</label>
+           <p-inputSwitch formControlName="available" id="available"> </p-inputSwitch>
+         </div>
+
+       </form>
+     </div>
+   </div>
+ </p-card>

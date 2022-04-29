@@ -19,7 +19,7 @@ export class VariantsFormEditComponent implements OnInit {
   form: FormGroup;
   currentId: string;
   isSubmitted = false;
-  imageDisplay: string | ArrayBuffer | null | undefined;
+
 
 
   constructor(private route: ActivatedRoute,
@@ -28,7 +28,6 @@ export class VariantsFormEditComponent implements OnInit {
               private variantsService: VariantsService,
               private messageService: MessageService,
               private location: Location,
-
               ) {}
 
   ngOnInit(): void {
@@ -42,8 +41,8 @@ export class VariantsFormEditComponent implements OnInit {
       product: ['', Validators.required],
       size: ['', Validators.required],
       inventory: ['', Validators.required],
-      barcode: ['', Validators.required],
-      available: ['', Validators.required]
+      available: ['', Validators.required],
+      barcode: ['', Validators.required]
     });
   }
 
@@ -73,18 +72,18 @@ export class VariantsFormEditComponent implements OnInit {
   }
 
   
-  onImageUpload(event: any) {
-    const file = event.target.files[0];
-    if (file) {
-      this.form.patchValue({ image: file });
-      this.form.get('image')?.updateValueAndValidity();
-      const fileReader = new FileReader();
-      fileReader.onload = () => {
-        this.imageDisplay = fileReader.result;
-      };
-      fileReader.readAsDataURL(file);
-    }
-  }
+  // onImageUpload(event: any) {
+  //   const file = event.target.files[0];
+  //   if (file) {
+  //     this.form.patchValue({ image: file });
+  //     this.form.get('image')?.updateValueAndValidity();
+  //     const fileReader = new FileReader();
+  //     fileReader.onload = () => {
+  //       this.imageDisplay = fileReader.result;
+  //     };
+  //     fileReader.readAsDataURL(file);
+  //   }
+  // }
 
   private _updateVariant(variantFormData: FormData) {
     this.variantsService.updateVariant(variantFormData, this.currentId).subscribe(
