@@ -40,6 +40,10 @@ const routes: Routes = [
     path: 'products/brand/:brandId',
     component: ProductsBrandsComponent,
   },
+    {
+    path: 'products/brand/:brandId/:brandName',
+    component: ProductsBrandsComponent,
+  },
   {
     path: 'women-products',
     component: WomenProductsListComponent,

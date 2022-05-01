@@ -8,7 +8,7 @@
         <ng-template let-brand pTemplate="item">
             <div class="brands">
                 <div class="brands-content" >
-                    <img [src]="brand.image" alt="" (click)="navigateToBrand(brand.id)">                   
+                    <img [src]="brand.image" alt="" (click)="navigateToBrand(brand.id, brand.name)">                   
                 </div>
             </div>
         </ng-template>

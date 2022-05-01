@@ -48,8 +48,8 @@ responsiveOptions;
 
 
 
- navigateToBrand(brandId){
-  this.router.navigate([`/products/brand/${brandId}`]);      
+ navigateToBrand(brandId, brandName: string){
+  this.router.navigate([`/products/brand/${brandId}/${brandName}`]);      
   }
 
 }

@@ -100,6 +100,16 @@ export class ProductPageComponent implements OnInit, OnDestroy {
     this.cartService.setCartItem(cartItem);
   }
 
+  addWProductToCart() {
+    const cartItem: CartItem = {
+      productId: this.currentId,
+      quantity: this.quantity,
+      variants: this.selectedSize,
+    };
+
+    this.cartService.setCartItem(cartItem);
+  }
+
   private _getProduct(id: string) {
     this.prodService
       .getProduct(id)

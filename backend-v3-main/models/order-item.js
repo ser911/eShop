@@ -17,9 +17,9 @@ const orderItemSchema = mongoose.Schema({
                 type: mongoose.Schema.Types.ObjectId,
                 ref: 'W_product'
             },
-            variant: {
+            wVariant: {
                 type: mongoose.Schema.Types.ObjectId,
-                ref: 'W_productVariant'
+                ref: 'W_productVariant' 
             }
 })
 

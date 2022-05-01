@@ -5,6 +5,7 @@ import { Product } from '../../models/product';
 import { CategoriesService } from '../../services/categories.service';
 import { Category } from '../../models/category';
 import { W_ProductsService } from '../../services/w-products.service';
+import { W_Product } from '../../models/w-product';
 
 @Component({
   selector: 'eshop-frontend-products-brands',
@@ -16,8 +17,10 @@ export class ProductsBrandsComponent implements OnInit {
   isChecked = false;
   binaryProp = true;
   currentId: string;
+  brandName: string;
   @Input() product: Product;
   products: Product[] = [];
+  wProds: W_Product[] = [];
   filteredProducts: Product[] = [];
   categories: Category[] = [];
 
@@ -38,7 +41,11 @@ export class ProductsBrandsComponent implements OnInit {
   private _retrieveId(){
     this.route.params.subscribe((params)=>{
        this.currentId = params.brandId;
-       console.log(this.currentId);             
+       this.brandName = params.brandName;
+       console.log(this.currentId);    
+       console.log(this.brandName);     
+       
+                
       
     })
   }
@@ -46,6 +53,8 @@ export class ProductsBrandsComponent implements OnInit {
   private _getProdByBrand(categoriesFilter?: string[]){
     this.productsService.getProducts(categoriesFilter).subscribe((products)=>{
       this.products = products;
+  
+      
        const filtered = this.products.filter(prod => prod.brand === this.currentId)
       console.log(filtered);
       this.filteredProducts = filtered;

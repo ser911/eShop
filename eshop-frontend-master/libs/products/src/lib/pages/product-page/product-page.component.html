@@ -67,11 +67,17 @@
               </p-inputNumber>
             </div>
           </div>
-          <div class="product-action col-12">
+          <div *ngIf="menProd" class=" product-action col-12">
             <button pButton pRipple type="button" label="Add to cart" class="p-button-rounded"
               (click)="addProductToCart()">
             </button>
           </div>
+
+                    <div *ngIf="wProd" class=" product-action col-12">
+                      <button pButton pRipple type="button" label="Add to cart" class="p-button-rounded"
+                        (click)="addWProductToCart()">
+                      </button>
+                    </div>
 
           <div class="col-9 desc-box">
             <div class="desc" [innerHTML]="product.description"></div>
