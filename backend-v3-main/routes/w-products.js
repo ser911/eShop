@@ -58,6 +58,22 @@ router.get(`/`, async (req, res) => {
     res.send(productList);
 })
 
+router.get(`/prodname/:name`, async (req, res) => {
+    let prodName = req.params.name;
+
+    const productsList = await W_product.find({
+        name: prodName
+    });
+
+    if (!productsList) {
+        res.status(500).json({
+            success: false
+        });
+    }
+    res.send(productsList);
+})
+
+
 router.get(`/:id`, async (req, res) => {
     const product = await W_product.findById(req.params.id);
 
@@ -161,7 +177,6 @@ router.put('/:id', uploadOptions.single('image'), async (req, res) => {
             brand: req.body.brand,
             price: req.body.price,
             isFeatured: req.body.isFeatured,
-            rating: req.body.rating,
             color: req.body.color,
             discount: req.body.discount,
             factoryCode: req.body.factoryCode,

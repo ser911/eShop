@@ -23,6 +23,12 @@ export class W_ProductsService {
     });
   }
 
+  getProductByName(prodName: string): Observable<W_Product[]> {
+    return this.http.get<W_Product[]>(
+      `${this.apiUrlW_Products}/prodname/${prodName}`
+    );
+  }
+
   getWProduct(productId: string): Observable<W_Product> {
     return this.http.get<W_Product>(`${this.apiUrlW_Products}/${productId}`);
   }

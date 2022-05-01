@@ -4,6 +4,7 @@ import { ProductsService } from '../../services/products.service';
 import { Product } from '../../models/product';
 import { CategoriesService } from '../../services/categories.service';
 import { Category } from '../../models/category';
+import { W_ProductsService } from '../../services/w-products.service';
 
 @Component({
   selector: 'eshop-frontend-products-brands',
@@ -22,7 +23,8 @@ export class ProductsBrandsComponent implements OnInit {
 
   constructor(private route: ActivatedRoute,
               private productsService: ProductsService,
-              private catService : CategoriesService) { }
+              private catService : CategoriesService,
+              private wProdService: W_ProductsService) { }
 
   ngOnInit(): void {
     this._retrieveId();

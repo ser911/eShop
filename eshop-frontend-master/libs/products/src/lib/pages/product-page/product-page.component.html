@@ -32,14 +32,26 @@
       <div class="sm:col-12 md:col-12 lg:col-12 xl:col-12 pt-2 pb-4">
         <div class="grid">
 
+<div *ngIf="menProd">
+  <div class="colors col-12" *ngIf="multipleColors">
+    <h2>Colors</h2>
+    <div [style.background-color]="product.color" class="circle" *ngFor="let product of products, let i = index"
+      (click)="selectColor(product.id)"></div>
+  
+  </div>
 
+</div>
 
-          <div class="colors col-12" *ngIf="multipleColors">
-            <h2>Colors</h2>
-            <div [style.background-color]="product.color" class="circle" *ngFor="let product of products, let i = index"
-              (click)="selectColor(product.id)"></div>
+<div *ngIf="wProd">
 
-          </div>
+  <div class="colors col-12" *ngIf="multipleColors">
+    <h2>Colors</h2>
+    <div [style.background-color]="product.color" class="circle"
+      *ngFor="let product of products, let i = index" (click)="selectWColor(product.id)"></div>
+
+  </div>
+</div>
+
           <div class="sizes col-12">
             <h2>Sizes</h2>
             <button [ngClass]="{gold: clickedIndex === i}" class="size" [disabled]="f.available? false : true"

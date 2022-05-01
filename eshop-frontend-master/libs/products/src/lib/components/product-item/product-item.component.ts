@@ -28,14 +28,11 @@ export class ProductItemComponent implements OnInit {
   private _retrieveParam(){
  
     this.url = this.route.url;
-    console.log(this.url.value[0].path);
-    console.log(this.url);
-    
+
     if (this.url.value[0].path === 'women-products') {
       this.w = true;
     }
-    console.log(this.w);
-    
+
   }
 
   // addProductToCart(){

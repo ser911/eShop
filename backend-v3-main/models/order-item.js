@@ -12,7 +12,15 @@ const orderItemSchema = mongoose.Schema({
     variant:{
         type: mongoose.Schema.Types.ObjectId,
         ref: 'ProductVariant'
-    }
+    },
+        wProduct: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'W_product'
+            },
+            variant: {
+                type: mongoose.Schema.Types.ObjectId,
+                ref: 'W_productVariant'
+            }
 })
 
 exports.OrderItem = mongoose.model('OrderItem', orderItemSchema);
